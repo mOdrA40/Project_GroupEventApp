@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/getStartedFragment">
+
+    <!-- Fragment Get Started -->
+    <fragment
+        android:id="@+id/getStartedFragment"
+        android:name="com.example.project_groupeventapp.GetStartedFragment"
+        android:label="Get Started">
+        <action
+            android:id="@+id/action_getStarted_to_login"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_login_to_home"
+            app:destination="@id/navigation_home" />
+
+    </fragment>
+
+    <!-- Fragment Login -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.project_groupeventapp.LoginFragment"
+        android:label="Login">
+        <action
+            android:id="@+id/action_login_to_register"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_login_to_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+
+    <!-- Fragment Register -->
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.project_groupeventapp.RegisterFragment"
+        android:label="Register">
+        <action
+            android:id="@+id/action_register_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <!-- Fragment untuk Bottom Navigation -->
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.project_groupeventapp.ui.home.HomeFragment"
+        android:label="Home" />
+    <action
+        android:id="@+id/action_homeFragment_to_profileFragment"
+        app:destination="@id/profileFragment" />
+    <action
+        android:id="@+id/action_homeFragment_to_createEventFragment"
+        app:destination="@id/createEventFragment" />
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.example.project_groupeventapp.ui.search.SearchFragment"
+        android:label="Search" />
+
+    <fragment
+        android:id="@+id/navigation_calendar"
+        android:name="com.example.project_groupeventapp.ui.calendar.CalendarFragment"
+        android:label="Calendar" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.project_groupeventapp.ui.settings.SettingsFragment"
+        android:label="Settings">
+        <action
+            android:id="@+id/action_settingsFragment_to_homeFragment"
+            app:destination="@id/navigation_home" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_settingsFragment_to_qrScannerFragment"
+        app:destination="@id/qrScannerFragment" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.project_groupeventapp.ui.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_homeFragment"
+            app:destination="@id/navigation_home" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.project_groupeventapp.ui.profile.EditProfileFragment"
+        android:label="Edit Profile"
+        tools:layout="@layout/fragment_edit_profile">
+        <action
+            android:id="@+id/action_editProfileFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_profileFragment_to_editProfileFragment"
+        app:destination="@id/editProfileFragment" />
+
+    <fragment
+        android:id="@+id/successFragment"
+        android:name="com.example.project_groupeventapp.ui.profile.SuccessFragment"
+        android:label="Success"
+        tools:layout="@layout/fragment_success">
+        <action
+            android:id="@+id/action_successFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_successFragment_to_homeFragment"
+            app:destination="@id/navigation_home" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_editProfileFragment_to_successFragment"
+        app:destination="@id/successFragment" />
+
+    <fragment
+        android:id="@+id/createEventFragment"
+        android:name="com.example.project_groupeventapp.ui.event.CreateEventFragment"
+        android:label="Create Event">
+        <action
+            android:id="@+id/action_createEventFragment_to_guestListFragment"
+            app:destination="@id/guestListFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/guestListFragment"
+        android:name="com.example.project_groupeventapp.ui.event.GuestListFragment"
+        android:label="Guest List" />
+
+    <action
+        android:id="@+id/action_createEventFragment_to_guestListFragment"
+        app:destination="@id/guestListFragment" />
+
+    <fragment
+        android:id="@+id/qrScannerFragment"
+        android:name="com.example.project_groupeventapp.ui.qrscanner.QRScannerFragment"
+        android:label="QR Scanner"
+        tools:layout="@layout/fragment_q_r_scanner" />
+
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.example.project_groupeventapp.ui.notifications.NotificationsFragment"
+        android:label="Notifications" />
+
+
+
+</navigation>

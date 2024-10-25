@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/background_upcoming_event_item">
+
+    <!-- Event Icon -->
+    <ImageView
+        android:id="@+id/iv_event_icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_event_icon"
+        android:background="@drawable/background_rounded_icon"
+        android:layout_gravity="center_vertical"
+        android:padding="8dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Event Details -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Event Title -->
+        <TextView
+            android:id="@+id/tv_event_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tech Conference"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@android:color/black" />
+
+        <!-- Event Date and Time -->
+        <TextView
+            android:id="@+id/tv_event_date_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="25 Okt 2023, 09:00 AM"
+            android:textSize="14sp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
+</LinearLayout>

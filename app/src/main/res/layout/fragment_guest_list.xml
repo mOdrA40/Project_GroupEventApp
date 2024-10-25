@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.event.GuestListFragment"
+    android:padding="16dp">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tv_private_event_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Private Event Session"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <!-- Search Bar -->
+    <EditText
+        android:id="@+id/et_search_guests"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Search Guests by Name"
+        android:backgroundTint="@color/light_gray"
+        android:drawableStart="@drawable/ic_search"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_private_event_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Guest List Title -->
+    <TextView
+        android:id="@+id/tv_guest_list_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guest List"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/et_search_guests"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Select All Checkbox -->
+    <CheckBox
+        android:id="@+id/cb_select_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select All"
+        app:layout_constraintTop_toBottomOf="@id/tv_guest_list_title"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- RecyclerView for Guest List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_guest_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/cb_select_all"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/button_container"
+        android:layout_marginTop="16dp" />
+
+    <!-- Cancel and Send Buttons -->
+    <LinearLayout
+        android:id="@+id/button_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/rv_guest_list"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Cancel"
+        android:backgroundTint="@color/light_gray"
+        android:textColor="@android:color/black"
+        android:layout_marginEnd="8dp" />
+
+    <Button
+        android:id="@+id/btn_send"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Send"
+        android:backgroundTint="@color/button_background"
+        android:textColor="@android:color/white" />
+</LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
